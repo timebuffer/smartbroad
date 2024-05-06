@@ -5,7 +5,7 @@ function App() {
   const [repositories, setRepositories] = useState([]);
 
   useEffect(() => {
-    const token = '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';
+    const token = '';
     const apiUrl = 'https://api.github.com/timebuffer/smartbroad';
 
     const headers = {
