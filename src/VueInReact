@@ -1,0 +1,24 @@
+import React, { useEffect, useRef } from 'react';
+//import { createApp } from 'vue';
+import HelloWorld from './HelloWorld.vue';
+
+function VueInReact() {
+  const divRef = useRef(null);
+
+  useEffect(() => {
+    if (divRef.current) {
+      const app = createApp(HelloWorld);
+      app.mount(divRef.current);
+    }
+
+    return () => {
+      if (divRef.current) {
+        app.unmount();
+      }
+    };
+  }, []);
+
+  return <div ref={divRef}></div>;
+}
+
+export default VueInReact;
