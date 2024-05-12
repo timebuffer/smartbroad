@@ -6,11 +6,11 @@ function App() {
 
   useEffect(() => {
     const token = '';
-    const apiUrl = 'https://api.github.com/timebuffer/smartbroad';
+    const apiUrl = 'https://api.github.com/repos/timebuffer/smartbroad';
 
     const headers = {
-      'Authorization': `token ${token}`,
-      'Accept': 'application/vnd.github.v3+json'
+      'Authorization': `Bearer ${token}`,
+      //'Accept': 'application/vnd.github.v3+json'
     };
 
     fetch(apiUrl, { headers })

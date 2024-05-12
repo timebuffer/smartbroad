@@ -2,6 +2,13 @@ const path = require('path');
 
 module.exports = {
   target: 'node',
+  rules: [
+    // ...other rules
+    {
+      test: /\.vue$/,
+      loader: 'vue-loader'
+    }
+  ],
   resolve: {
     fallback: {
       "buffer": false,
@@ -12,8 +19,17 @@ module.exports = {
       "url": false,
       "util": false,
       "zlib": false
+    },
+    alias: {
+      'vue$': 'vue/dist/vue.esm-bundler.js' // Depending on your Vue version
     }
   },
+
+  plugins: [
+    // ...other plugins
+    new VueLoaderPlugin()
+  ],
+  
   module: {
     rules: [
       {
